@@ -8,7 +8,6 @@ import { transformHeaders } from '../../lib/transformData';
 export default class Table extends Component {
     render() {
         if(this.props.isLoading) {
-            console.log('data', this.props.data);
             const rawHeaders = Object.keys(this.props.data[0]).map((header) => header);
             const headers = transformHeaders(rawHeaders);
             

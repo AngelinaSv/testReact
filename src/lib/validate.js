@@ -7,7 +7,6 @@ function validateAndTransform(rawRow, parsedObjectMap) {
     let age;
 
     for(const [key, value] of Object.entries(rawRow)) {
-        console.log('rawRow', rawRow);
         if(key === 'age') {
             age = value;
 
@@ -80,7 +79,7 @@ function validateAndTransform(rawRow, parsedObjectMap) {
             if(duplicates.getPhoneDuplicates(valueLowerCase).length > 1) {
                 // Getting first mentioned validated row that contains duplicate email
                 const firstMentionedRow = parsedObjectMap.get(duplicatesPhone[0]);
-                console.log('firstMentionedRow.phone', firstMentionedRow.phone);
+
                 // According requirements we update this row only once with current parse row object id 
                 if(!firstMentionedRow.phone.duplicateWithPhone) {
                     firstMentionedRow.phone.duplicateWithPhone = rawRow.id;

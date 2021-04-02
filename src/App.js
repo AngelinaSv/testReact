@@ -17,7 +17,6 @@ class App extends Component {
   }
 
   parse(event) {
-    console.log('event', event.target.files[0]);
     if(event.target.files[0].type !== 'text/csv') {
       return this.setState({
         isLoading: false,
